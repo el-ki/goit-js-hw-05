@@ -71,7 +71,7 @@ class Car {
     accelerate(value) {
         const newSpeed = value + this.speed;
         if (newSpeed <= this.maxSpeed) { 
-            console.log(this.speed = newSpeed);
+            return this.speed = newSpeed;
         }
   } 
 
