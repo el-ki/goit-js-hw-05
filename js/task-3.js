@@ -20,12 +20,15 @@ class Storage {
         } this.array.push(item);
     }
     removeItem(item) {
-        for (const element of this.array) {
-            if (element === item) {
-                const elementIndex = this.array.indexOf(element);
-                this.array.splice(elementIndex, 1);
-            } 
-        } 
+        if (this.array.includes(item)) { 
+            this.array.splice(this.array.indexOf(item), 1);
+        }
+        // for (const element of this.array) {
+        //     if (element === item) {
+        //         const elementIndex = this.array.indexOf(element);
+        //         this.array.splice(elementIndex, 1);
+        //     } 
+        // } 
     }
 }
 

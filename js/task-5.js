@@ -3,8 +3,9 @@
 class Car {
 
     static getSpecs(car) {
-        const array = Object.values(car);
-        console.log(`maxSpeed: ${array[0]}, speed: ${array[1]}, isOn: ${array[2]}, distance: ${array[3]}, price: ${array[4]}`);
+        console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`);
+        // const array = Object.values(car);
+        // console.log(`maxSpeed: ${array[0]}, speed: ${array[1]}, isOn: ${array[2]}, distance: ${array[3]}, price: ${array[4]}`);
     }
    
   /*
@@ -71,7 +72,7 @@ class Car {
     accelerate(value) {
         const newSpeed = value + this.speed;
         if (newSpeed <= this.maxSpeed) { 
-            return this.speed = newSpeed;
+            this.speed = newSpeed;
         }
   } 
 
@@ -81,8 +82,8 @@ class Car {
    */
     decelerate(value) {
         const newSpeed = this.speed - value;
-      if (newSpeed > 0) { 
-          return this.speed = newSpeed;
+      if (newSpeed >= 0) { 
+          this.speed = newSpeed;
         } 
   }
 
@@ -92,7 +93,7 @@ class Car {
    */
     drive(hours) {
         if (this.isOn) { 
-            return this.distance += hours * this.speed;
+            this.distance += hours * this.speed;
         }
   } 
 }
